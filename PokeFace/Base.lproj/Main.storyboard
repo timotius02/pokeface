@@ -1,25 +1,91 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PokeFace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jx9-EE-KuI">
+                                <frame key="frameInset" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PokéFace" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mA-mQ-D3y">
+                                <frame key="frameInset" minX="231" minY="20" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="0.96862745098039216" green="0.8901960784313725" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.2196078431372549" green="0.37647058823529411" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgX-Eu-EJJ">
+                                <frame key="frameInset" minX="265" minY="514" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="LWU-aD-NsZ"/>
+                                </constraints>
+                                <state key="normal" image="camera-button"/>
+                                <connections>
+                                    <action selector="cameraButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pSv-Ke-d50"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBe-cR-sLF">
+                                <frame key="frameInset" minX="482" minY="519" width="45" height="38"/>
+                                <state key="normal" image="switch-camera"/>
+                                <connections>
+                                    <action selector="cameraChange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QB9-3e-s8v"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6mA-mQ-D3y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DVM-Sn-Py4"/>
+                            <constraint firstItem="6mA-mQ-D3y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Do9-EE-dq1"/>
+                            <constraint firstItem="JgX-Eu-EJJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ONT-FC-y9O"/>
+                            <constraint firstItem="jx9-EE-KuI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OeZ-aJ-zmr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NBe-cR-sLF" secondAttribute="trailing" constant="35" id="QPp-nd-A9z"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jx9-EE-KuI" secondAttribute="bottom" id="S6Q-CI-FTI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JgX-Eu-EJJ" secondAttribute="bottom" constant="16" id="SUr-qj-frI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NBe-cR-sLF" secondAttribute="bottom" constant="31" id="TQt-KN-kle"/>
+                            <constraint firstItem="6mA-mQ-D3y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eVE-Uz-8nv"/>
+                            <constraint firstItem="6mA-mQ-D3y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jVu-QV-ITg"/>
+                            <constraint firstAttribute="trailing" secondItem="jx9-EE-KuI" secondAttribute="trailing" id="moM-Ef-7KY"/>
+                            <constraint firstItem="6mA-mQ-D3y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oKK-0n-8HF"/>
+                            <constraint firstItem="6mA-mQ-D3y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="q45-Xp-QD3"/>
+                            <constraint firstItem="jx9-EE-KuI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sjn-5m-Aib"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DVM-Sn-Py4"/>
+                                <exclude reference="Do9-EE-dq1"/>
+                                <exclude reference="jVu-QV-ITg"/>
+                                <exclude reference="oKK-0n-8HF"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="jx9-EE-KuI" id="H2e-Lm-mCW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9l3-WH-Khc"/>
             </objects>
+            <point key="canvasLocation" x="141" y="311"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera-button" width="70" height="70"/>
+        <image name="switch-camera" width="39" height="34"/>
+    </resources>
 </document>
